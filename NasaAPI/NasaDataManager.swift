@@ -35,7 +35,7 @@ struct NasaDataManager {
                 }
                 
                 if let safeData = data {
-                    print("safe data \(safeData.base64EncodedData())")
+                    //print("safe data \(safeData.base64EncodedData())")
                     self.parseJSON(nasaData: safeData)
                 }
             }
@@ -49,19 +49,32 @@ struct NasaDataManager {
     func parseJSON(nasaData: Data){
         
         do {
-            if let json = try JSONSerialization.jsonObject(with: nasaData, options: []) as? [String: Any] {
-                print(json)
+            if let json = try JSONSerialization.jsonObject(with:nasaData, options: []) as? [String: Any] {
                 // try to read out a string array
-//                if let values = json["bpi"] as? [String: Double] {
+                print(json)
+                print("Parsing JSON")
+                if let photos = json["photos"] as? [Any] {
+                    
+                    //self.delegate?.didUpdateNasa(prices: values)
+                    print("Parsing photos")
+                    for photo in photos{
+//                        if let photosURL = photo["img_src"] as? String {
 //
-//                    self.delegate?.didUpdateBitcoin(prices: values)
-//                }
+//                            //self.delegate?.didUpdateNasa(prices: values)
+//                            print("Parsing urls")
+//                            print(photosURL)
+//                        }
+                        print(photo)
+                    }
+                }
             }
         } catch let error as NSError {
             print("Failed to load: \(error.localizedDescription)")
         }
 
     }
+
+    
     
     
 }
