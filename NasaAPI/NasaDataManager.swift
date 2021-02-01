@@ -58,22 +58,19 @@ struct NasaDataManager {
         do {
             if let json = try JSONSerialization.jsonObject(with:nasaData, options: []) as? [String: Any] {
                 // try to read out a string array
-                print(json)
+                //print(json)
                 print("Parsing JSON")
                 if let photos = json["photos"] as? [Any] {
                     
                     //self.delegate?.didUpdateNasa(prices: values)
-                    print("Parsing photos")
+                    //print("Parsing photos")
                     for photo in photos{
-                        let photo1: Photo = try! JSONDecoder().decode(Photo.self, from: photo as! Data)
-                        
-//                        if let photosURL = photo["img_src"] as? String {
+                        if let dictionary = photo as? [String: Any] {
+                                    
+                            print(dictionary["img_src"])
 //
-//                            //self.delegate?.didUpdateNasa(prices: values)
-//                            print("Parsing urls")
-//                            print(photosURL)
-//                        }
-                        print(photo1)
+                                    
+                                }
                     }
                 }
             }
