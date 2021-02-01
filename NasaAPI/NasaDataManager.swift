@@ -46,6 +46,13 @@ struct NasaDataManager {
         
     }
     
+    func parseJSON2(nasaData: Data){
+//        let jsonData = nasaData(using: .utf8)
+//        let root: Root = try! JSONDecoder().decode(Root.self, from: jsonData)
+    }
+    
+    
+    
     func parseJSON(nasaData: Data){
         
         do {
@@ -58,13 +65,15 @@ struct NasaDataManager {
                     //self.delegate?.didUpdateNasa(prices: values)
                     print("Parsing photos")
                     for photo in photos{
+                        let photo1: Photo = try! JSONDecoder().decode(Photo.self, from: photo as! Data)
+                        
 //                        if let photosURL = photo["img_src"] as? String {
 //
 //                            //self.delegate?.didUpdateNasa(prices: values)
 //                            print("Parsing urls")
 //                            print(photosURL)
 //                        }
-                        print(photo)
+                        print(photo1)
                     }
                 }
             }
