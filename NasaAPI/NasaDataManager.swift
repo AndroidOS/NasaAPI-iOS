@@ -63,7 +63,11 @@ struct NasaDataManager {
                                     
                             //print(dictionary["img_src"])
                             if let imgURL = dictionary["img_src"] as? String {
-                                urls.append(imgURL)
+                                
+                               // let aString = "This is my string"
+                                let imgURLs = imgURL.replacingOccurrences(of: "http", with: "https", options: .literal, range: nil)
+                                
+                                urls.append(imgURLs)
                             }
                             
                                     
