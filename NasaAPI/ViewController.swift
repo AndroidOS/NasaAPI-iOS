@@ -7,7 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, NasaDataManagerDelegate {
+    
     
     var dataManager = NasaDataManager()
 
@@ -16,6 +17,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         dataManager.fetchNasaData()
     }
+    
+    func didUpdateNasa(picURLs: [String]) {
+        print("didUpdateNasa")
+        print(picURLs)
+    }
+    
 
 
     @IBAction func btnDownload(_ sender: Any) {

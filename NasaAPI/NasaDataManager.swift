@@ -46,32 +46,32 @@ struct NasaDataManager {
         
     }
     
-    func parseJSON2(nasaData: Data){
-//        let jsonData = nasaData(using: .utf8)
-//        let root: Root = try! JSONDecoder().decode(Root.self, from: jsonData)
-    }
-    
-    
+  
     
     func parseJSON(nasaData: Data){
         
+        var urls = [String]()
+        
         do {
             if let json = try JSONSerialization.jsonObject(with:nasaData, options: []) as? [String: Any] {
-                // try to read out a string array
-                //print(json)
+               
                 print("Parsing JSON")
                 if let photos = json["photos"] as? [Any] {
-                    
-                    //self.delegate?.didUpdateNasa(prices: values)
-                    //print("Parsing photos")
+                   //print(photos)
                     for photo in photos{
                         if let dictionary = photo as? [String: Any] {
                                     
-                            print(dictionary["img_src"])
-//
+                            //print(dictionary["img_src"])
+                            if let imgURL = dictionary["img_src"] as? String {
+                                urls.append(imgURL)
+                            }
+                            
                                     
                                 }
                     }
+                    
+                    print(urls)
+                    self.delegate?.didUpdateNasa(picURLs : urls)
                 }
             }
         } catch let error as NSError {

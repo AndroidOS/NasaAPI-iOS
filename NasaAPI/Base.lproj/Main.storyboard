@@ -22,7 +22,7 @@
                                     <constraint firstAttribute="width" secondItem="Bb5-vK-6hQ" secondAttribute="height" multiplier="414:271" id="Cdg-9J-eNJ"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWW-rH-t6m">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWW-rH-t6m">
                                 <rect key="frame" x="137" y="433" width="141" height="30"/>
                                 <state key="normal" title="GET"/>
                                 <connections>
@@ -33,13 +33,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BWW-rH-t6m" secondAttribute="bottom" constant="399" id="1KV-VP-uDJ"/>
                             <constraint firstItem="Bb5-vK-6hQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="32" id="Gdh-6r-29d"/>
-                            <constraint firstItem="BWW-rH-t6m" firstAttribute="top" secondItem="Bb5-vK-6hQ" secondAttribute="bottom" constant="130" id="GsH-v6-g8M"/>
+                            <constraint firstItem="BWW-rH-t6m" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="T5s-Gk-fS2"/>
+                            <constraint firstItem="BWW-rH-t6m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="137" id="cUe-0x-CJi"/>
+                            <constraint firstItem="BWW-rH-t6m" firstAttribute="centerX" secondItem="Bb5-vK-6hQ" secondAttribute="centerX" id="d8j-ld-v2X"/>
                             <constraint firstItem="Bb5-vK-6hQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dps-6d-2i9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BWW-rH-t6m" secondAttribute="trailing" constant="136" id="p3b-gL-yt5"/>
                             <constraint firstItem="Bb5-vK-6hQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tgY-4U-aGY"/>
-                            <constraint firstItem="BWW-rH-t6m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="137" id="usM-4J-sd3"/>
                         </constraints>
                     </view>
                 </viewController>
