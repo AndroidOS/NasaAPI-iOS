@@ -74,7 +74,7 @@ struct NasaDataManager {
                                 }
                     }
                     
-                    print(urls)
+                    //print(urls)
                     self.delegate?.didUpdateNasa(picURLs : urls)
                 }
             }
