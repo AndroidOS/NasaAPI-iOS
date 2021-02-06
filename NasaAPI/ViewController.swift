@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController, NasaDataManagerDelegate {
     
+    var index = 0
+    var sol = 100
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -19,14 +21,20 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
         dataManager.delegate = self
         // Do any additional setup after loading the view.
         imageView.image = UIImage(named: "1024")
-        dataManager.fetchNasaData()
+        dataManager.fetchNasaData(sol: sol)
         
     }
     
     func didUpdateNasa(picURLs: [String]) {
         print("didUpdateNasa")
         print(picURLs)
-        let url = URL(string: picURLs[0])!
+        let url = URL(string: picURLs[index])!
+        if index < picURLs.count-1 {
+            index += 1
+        } else {
+            index = 0
+        }
+        
         print(url)
         downloadImage(from: url)
     }
@@ -34,7 +42,7 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
 
 
     @IBAction func btnDownload(_ sender: Any) {
-        dataManager.fetchNasaData()
+        dataManager.fetchNasaData(sol: sol)
         
     }
     

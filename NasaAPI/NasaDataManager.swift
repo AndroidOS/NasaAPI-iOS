@@ -13,10 +13,15 @@ protocol  NasaDataManagerDelegate {
 
 struct NasaDataManager {
     //https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=900&camera=fhaz&api_key=DEMO_KEY"
-    let nasaApiURL = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=900&camera=fhaz&api_key=DEMO_KEY"
+    
+    var sol_num = 1000
+    
+    
     var delegate: NasaDataManagerDelegate?
     
-    func fetchNasaData(){
+    func fetchNasaData(sol: Int){
+        
+        let nasaApiURL = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=\(sol)&camera=mast&api_key=DEMO_KEY"
        
         performRequest(urlString: nasaApiURL)
     }
