@@ -14,6 +14,8 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var solText: UITextField!
+    
     var dataManager = NasaDataManager()
 
     override func viewDidLoad() {
@@ -42,7 +44,13 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
 
 
     @IBAction func btnDownload(_ sender: Any) {
+        let userSol = solText.text
+        print(userSol)
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+        solText.resignFirstResponder()
         dataManager.fetchNasaData(sol: sol)
+        
         
     }
     
