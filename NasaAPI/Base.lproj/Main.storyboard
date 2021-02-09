@@ -71,16 +71,16 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Photo Table View Controller-->
         <scene sceneID="l7a-Hb-NNn">
             <objects>
-                <tableViewController id="tbB-aX-A9d" sceneMemberID="viewController">
+                <tableViewController id="tbB-aX-A9d" customClass="PhotoTableViewController" customModule="NasaAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GGi-BO-Ker">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ade-AG-A2Y">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Ade-AG-A2Y">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ade-AG-A2Y" id="PBK-Wt-tJ0">
@@ -90,8 +90,8 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="tbB-aX-A9d" id="gWL-rK-YQg"/>
-                            <outlet property="delegate" destination="tbB-aX-A9d" id="jn9-68-kvY"/>
+                            <outlet property="dataSource" destination="tbB-aX-A9d" id="F6l-H0-DKS"/>
+                            <outlet property="delegate" destination="tbB-aX-A9d" id="r9p-ca-9VV"/>
                         </connections>
                     </tableView>
                 </tableViewController>

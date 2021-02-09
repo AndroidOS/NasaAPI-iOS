@@ -18,6 +18,7 @@
 		BE0C68B325C34AEA004CA6F7 /* NasaAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0C68B225C34AEA004CA6F7 /* NasaAPIUITests.swift */; };
 		BE719FF625C49B3F000E8FD9 /* NasaDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE719FF525C49B3F000E8FD9 /* NasaDataManager.swift */; };
 		BE9DD53F25C6052800D65D8D /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9DD53E25C6052800D65D8D /* PhotoModel.swift */; };
+		BE9F557925D327140017D1BB /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F557825D327140017D1BB /* PhotoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		BE0C68B425C34AEA004CA6F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE719FF525C49B3F000E8FD9 /* NasaDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDataManager.swift; sourceTree = "<group>"; };
 		BE9DD53E25C6052800D65D8D /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		BE9F557825D327140017D1BB /* PhotoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				BE0C689625C34AE7004CA6F7 /* NasaAPI.xcdatamodeld */,
 				BE719FF525C49B3F000E8FD9 /* NasaDataManager.swift */,
 				BE9DD53E25C6052800D65D8D /* PhotoModel.swift */,
+				BE9F557825D327140017D1BB /* PhotoTableViewController.swift */,
 			);
 			path = NasaAPI;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE9DD53F25C6052800D65D8D /* PhotoModel.swift in Sources */,
+				BE9F557925D327140017D1BB /* PhotoTableViewController.swift in Sources */,
 				BE0C689225C34AE7004CA6F7 /* ViewController.swift in Sources */,
 				BE719FF625C49B3F000E8FD9 /* NasaDataManager.swift in Sources */,
 				BE0C689825C34AE7004CA6F7 /* NasaAPI.xcdatamodeld in Sources */,
