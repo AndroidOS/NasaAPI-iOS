@@ -11,7 +11,9 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
     
     var index = 0
     var sol = 100
+    var nasaURLs = [String]()
     
+    @IBOutlet weak var btnTable: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var solText: UITextField!
@@ -24,10 +26,13 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
         // Do any additional setup after loading the view.
         imageView.image = UIImage(named: "1024")
         dataManager.fetchNasaData(sol: sol)
-        
+        btnTable.isEnabled = false
     }
     
     func didUpdateNasa(picURLs: [String]) {
+        
+       
+        nasaURLs = picURLs
         print("didUpdateNasa")
         print(picURLs)
         let url = URL(string: picURLs[index])!
@@ -39,6 +44,9 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
         
         print(url)
         downloadImage(from: url)
+        DispatchQueue.main.async {
+            self.btnTable.isEnabled = true
+        }
     }
     
 
@@ -68,6 +76,21 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
                 self?.imageView.image = UIImage(data: data)
             }
         }
+    }
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? PhotoTableViewController
+        vc?.nasaURLs = nasaURLs
     }
 }
 

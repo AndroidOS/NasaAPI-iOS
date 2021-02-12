@@ -11,9 +11,11 @@ class PhotoTableViewController: UITableViewController {
 
     let myList = [1,2,3,4,5]
     
+    var nasaURLs = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(nasaURLs)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

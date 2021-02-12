@@ -63,6 +63,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnTable" destination="fr3-9P-hqQ" id="V6t-EB-QMX"/>
                         <outlet property="imageView" destination="Bb5-vK-6hQ" id="7xk-nv-2tK"/>
                         <outlet property="solText" destination="huZ-zB-F7q" id="tzE-Fy-1qN"/>
                     </connections>

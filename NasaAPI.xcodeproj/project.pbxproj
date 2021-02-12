@@ -109,6 +109,7 @@
 		BE0C688C25C34AE6004CA6F7 /* NasaAPI */ = {
 			isa = PBXGroup;
 			children = (
+				BE0C689E25C34AEA004CA6F7 /* Info.plist */,
 				BE9D75CC25D4833F00CC81CB /* Utils */,
 				BE9D75CB25D482BA00CC81CB /* Model */,
 				BE9D75CA25D482A600CC81CB /* View */,
@@ -167,7 +168,6 @@
 		BE9D75CC25D4833F00CC81CB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				BE0C689E25C34AEA004CA6F7 /* Info.plist */,
 				BE0C688F25C34AE7004CA6F7 /* SceneDelegate.swift */,
 				BE0C689625C34AE7004CA6F7 /* NasaAPI.xcdatamodeld */,
 				BE0C688D25C34AE6004CA6F7 /* AppDelegate.swift */,
