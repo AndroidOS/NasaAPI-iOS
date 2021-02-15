@@ -13,6 +13,8 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
     var sol = 100
     var nasaURLs = [String]()
     
+    var images = [UIImage]()
+    
     @IBOutlet weak var btnTable: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -47,6 +49,13 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
         DispatchQueue.main.async {
             self.btnTable.isEnabled = true
         }
+        
+        
+            for item in nasaURLs {
+                downloadImage1(from: URL(string: item)!)
+            }
+            
+        
     }
     
 
@@ -90,7 +99,31 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as? PhotoTableViewController
-        vc?.nasaURLs = nasaURLs
+        vc?.images = images
+    }
+    
+    func getImages(){
+        for item in nasaURLs {
+            downloadImage1(from: URL(string: item)!)
+        }
+        //tableView.reloadData()
+    }
+    
+    func downloadImage1(from url: URL){
+        //var pic: UIImage = UIImage(named: "1024")!
+        print("Download Started")
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            let pic = UIImage(data: data)!
+            self.images.append(pic)
+           // self.tableView.reloadData()
+//            DispatchQueue.main.async() { [weak self] in
+//                self?.imageView.image = UIImage(data: data)
+//            }
+        }
+        
     }
 }
 

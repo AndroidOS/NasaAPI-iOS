@@ -17,8 +17,8 @@ class PhotoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(nasaURLs)
-        getImages()
+        print(images.count)
+        //getImages()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,11 +42,6 @@ class PhotoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-         //Configure the cell...
-        //cell.lblText?.text = self.parts[indexPath.row].partNum
-        //cell.textLabel?.text = "\(self.myList[indexPath.row])"
-       
-        downloadImage(from: URL(string: nasaURLs[indexPath.row])!)
         cell.imageView?.image = images[indexPath.row]
             print("Image \(indexPath.row)")
             
@@ -55,34 +50,34 @@ class PhotoTableViewController: UITableViewController {
         return cell
     }
     
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-    }
-    
-    func getImages(){
-        for item in nasaURLs {
-            downloadImage(from: URL(string: item)!)
-        }
-        tableView.reloadData()
-    }
-    
-    func downloadImage(from url: URL) -> UIImage {
-        var pic: UIImage = UIImage(named: "1024")!
-        print("Download Started")
-        getData(from: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
-            pic = UIImage(data: data)!
-            self.images.append(pic)
-           // self.tableView.reloadData()
-//            DispatchQueue.main.async() { [weak self] in
-//                self?.imageView.image = UIImage(data: data)
-//            }
-        }
-        return pic
-    }
-    
+//    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+//        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+//    }
+//    
+//    func getImages(){
+//        for item in nasaURLs {
+//            downloadImage(from: URL(string: item)!)
+//        }
+//        tableView.reloadData()
+//    }
+//    
+//    func downloadImage(from url: URL) -> UIImage {
+//        var pic: UIImage = UIImage(named: "1024")!
+//        print("Download Started")
+//        getData(from: url) { data, response, error in
+//            guard let data = data, error == nil else { return }
+//            print(response?.suggestedFilename ?? url.lastPathComponent)
+//            print("Download Finished")
+//            pic = UIImage(data: data)!
+//            self.images.append(pic)
+//           // self.tableView.reloadData()
+////            DispatchQueue.main.async() { [weak self] in
+////                self?.imageView.image = UIImage(data: data)
+////            }
+//        }
+//        return pic
+//    }
+//    
 
     /*
     // Override to support conditional editing of the table view.
