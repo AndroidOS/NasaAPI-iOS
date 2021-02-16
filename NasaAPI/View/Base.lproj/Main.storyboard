@@ -107,10 +107,40 @@
                             <outlet property="delegate" destination="tbB-aX-A9d" id="r9p-ca-9VV"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="bSC-NM-Ohc" kind="show" identifier="detail" id="d9v-L6-oDt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ory-c6-HFy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1679.7101449275362" y="104.46428571428571"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="wFe-hJ-NId">
+            <objects>
+                <viewController id="bSC-NM-Ohc" customClass="DetailViewController" customModule="NasaAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mma-9b-TPI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JQl-cn-7tG">
+                                <rect key="frame" x="0.0" y="-10" width="424" height="433"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hqW-M7-pgc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="JQl-cn-7tG" secondAttribute="trailing" constant="-30" id="DtH-kp-PAl"/>
+                            <constraint firstItem="hqW-M7-pgc" firstAttribute="bottom" secondItem="JQl-cn-7tG" secondAttribute="bottom" constant="385" id="GaE-jd-3Zb"/>
+                            <constraint firstItem="JQl-cn-7tG" firstAttribute="top" secondItem="mma-9b-TPI" secondAttribute="topMargin" constant="-10" id="Uhm-8u-FUW"/>
+                            <constraint firstItem="JQl-cn-7tG" firstAttribute="leading" secondItem="mma-9b-TPI" secondAttribute="leading" id="u2O-kV-u9T"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LNG-HZ-MIP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjD-KE-kKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2579.7101449275365" y="108.48214285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8OF-gg-z67">
