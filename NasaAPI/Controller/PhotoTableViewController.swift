@@ -15,6 +15,8 @@ class PhotoTableViewController: UITableViewController {
     
     var images = [UIImage]()
     
+    var selectimage = UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(images.count)
@@ -51,7 +53,13 @@ class PhotoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectimage = images[indexPath.row]
         self.performSegue(withIdentifier: "detail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? DetailViewController
+        vc?.image = selectimage
     }
 
 
