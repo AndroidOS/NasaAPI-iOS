@@ -21,6 +21,9 @@ class DetailViewController: UIViewController {
     }
     
 
+    @IBAction func btnShare(_ sender: UIBarButtonItem) {
+        print("share button pressed")
+    }
     /*
     // MARK: - Navigation
 

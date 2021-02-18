@@ -46,14 +46,16 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
         
         print(url)
         downloadImage(from: url)
-        DispatchQueue.main.async {
-            self.btnTable.isEnabled = true
-        }
+        
         
         
             for item in nasaURLs {
                 downloadImage1(from: URL(string: item)!)
             }
+        
+        DispatchQueue.main.async {
+            self.btnTable.isEnabled = true
+        }
             
         
     }
