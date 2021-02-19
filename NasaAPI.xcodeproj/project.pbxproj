@@ -22,6 +22,7 @@
 		BE9D75C525D4824400CC81CB /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D75C425D4824400CC81CB /* PhotoTableViewCell.swift */; };
 		BE9DD53F25C6052800D65D8D /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9DD53E25C6052800D65D8D /* PhotoModel.swift */; };
 		BE9F557925D327140017D1BB /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F557825D327140017D1BB /* PhotoTableViewController.swift */; };
+		BEA3991A25E05D6C00C535E0 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3991925E05D6C00C535E0 /* PDFViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		BE9D75C425D4824400CC81CB /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		BE9DD53E25C6052800D65D8D /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		BE9F557825D327140017D1BB /* PhotoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
+		BEA3991925E05D6C00C535E0 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				BE9D75C425D4824400CC81CB /* PhotoTableViewCell.swift */,
 				BE9F557825D327140017D1BB /* PhotoTableViewController.swift */,
 				BE7C94B425DC7046008D527C /* DetailViewController.swift */,
+				BEA3991925E05D6C00C535E0 /* PDFViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE8671E825DB12A00076078C /* ImageList.swift in Sources */,
+				BEA3991A25E05D6C00C535E0 /* PDFViewController.swift in Sources */,
 				BE9D75C525D4824400CC81CB /* PhotoTableViewCell.swift in Sources */,
 				BE9DD53F25C6052800D65D8D /* PhotoModel.swift in Sources */,
 				BE9F557925D327140017D1BB /* PhotoTableViewController.swift in Sources */,

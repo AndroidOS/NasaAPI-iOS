@@ -138,6 +138,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.arrow.up" catalog="system" id="eC3-bA-avI">
                                             <connections>
                                                 <action selector="btnShare:" destination="bSC-NM-Ohc" id="ygz-F7-EhJ"/>
+                                                <segue destination="tkH-o0-ZUw" kind="presentation" id="gqK-by-GHA"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -161,6 +162,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjD-KE-kKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2579.7101449275365" y="108.48214285714285"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="m4B-SV-3e2">
+            <objects>
+                <viewController id="tkH-o0-ZUw" customClass="PDFViewController" customModule="NasaAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3KB-14-chy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ed8-kO-ZDa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="PDF" id="qbs-lf-Iit"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YC1-HK-nbG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Wj-SB-XhM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3553" y="124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8OF-gg-z67">
