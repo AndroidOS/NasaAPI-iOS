@@ -11,6 +11,7 @@ import PDFKit
 class PDFViewController: UIViewController {
     
     public var documentData: Data?
+    var image = UIImage(named: "1024")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,6 +85,10 @@ class PDFViewController: UIViewController {
         headIng.draw(at: CGPoint(x: 70, y: 0), withAttributes: attribHead)
         let text = "111111111"
         text.draw(at: CGPoint(x: 10, y: 100), withAttributes: attributes)
+        
+        // Location of the image to be drawn in UIKit coordinates.
+            let imagePosition = CGRect(x: 0, y: 0, width: 400, height: 400)
+        image?.draw(in: imagePosition)
       }
 
       return data
