@@ -135,7 +135,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="mGv-po-lEQ">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.arrow.up" catalog="system" id="eC3-bA-avI">
+                                        <barButtonItem key="rightBarButtonItem" title="PDF" id="eC3-bA-avI">
                                             <connections>
                                                 <action selector="btnShare:" destination="bSC-NM-Ohc" id="ygz-F7-EhJ"/>
                                                 <segue destination="tkH-o0-ZUw" kind="presentation" id="gqK-by-GHA"/>
@@ -207,7 +207,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
