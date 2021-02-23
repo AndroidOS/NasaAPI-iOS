@@ -94,4 +94,7 @@ class PDFViewController: UIViewController {
       return data
     }
 
+    @IBAction func btnSharePDF(_ sender: UIBarButtonItem) {
+        
+    }
 }
