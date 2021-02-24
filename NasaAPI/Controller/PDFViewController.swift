@@ -18,7 +18,7 @@ class PDFViewController: UIViewController {
 
         let pdfView = PDFView()
 
-        pdfView.translatesAutoresizingMaskIntoConstraints = false
+        pdfView.translatesAutoresizingMaskIntoConstraints = true
         view.addSubview(pdfView)
 
         pdfView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
@@ -94,7 +94,8 @@ class PDFViewController: UIViewController {
       return data
     }
 
-    @IBAction func btnSharePDF(_ sender: UIBarButtonItem) {
-        
+    
+    @IBAction func btnSharePdf(_ sender: Any) {
+        print("Button Share pressed")
     }
 }
