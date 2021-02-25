@@ -96,6 +96,32 @@ class PDFViewController: UIViewController {
 
     
     @IBAction func btnSharePdf(_ sender: Any) {
-        print("Button Share pressed")
+        print("Share PDF pressed")
+        
+        var pdfURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last! as URL
+               pdfURL = pdfURL.appendingPathComponent( "NasaApi - myPdf.pdf") as URL
+        
+        do {
+           
+
+            let activitycontroller = UIActivityViewController(activityItems: [pdfURL], applicationActivities: nil)
+            if activitycontroller.responds(to: #selector(getter: activitycontroller.completionWithItemsHandler))
+            {
+                activitycontroller.completionWithItemsHandler = {(type, isCompleted, items, error) in
+                    if isCompleted
+                    {
+                        print("completed")
+                    }
+                }
+            }
+
+            activitycontroller.excludedActivityTypes = [UIActivity.ActivityType.airDrop]
+            activitycontroller.popoverPresentationController?.sourceView = self.view
+            self.present(activitycontroller, animated: true, completion: nil)
+
+        }
+
     }
+    
+   
 }
