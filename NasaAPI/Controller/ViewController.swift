@@ -15,6 +15,8 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
     
     var images = [UIImage]()
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var btnTable: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -24,9 +26,12 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.style = .large
+            activityIndicator.color = .red
+        activityIndicator.startAnimating()
         dataManager.delegate = self
         // Do any additional setup after loading the view.
-        imageView.image = UIImage(named: "1024")
+        //imageView.image = UIImage(named: "1024")
         dataManager.fetchNasaData(sol: sol)
         btnTable.isEnabled = false
     }
@@ -55,6 +60,8 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
         
         DispatchQueue.main.async {
             self.btnTable.isEnabled = true
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
         }
             
         
