@@ -10,7 +10,11 @@ import PDFKit
 
 class PDFViewController: UIViewController {
     
+   
+    @IBOutlet weak var pdfViewShell: UIView!
+    
     public var documentData: Data?
+    
     var image = UIImage(named: "1024")
 
     override func viewDidLoad() {
@@ -24,8 +28,12 @@ class PDFViewController: UIViewController {
         pdfView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         pdfView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+ 
         
+        pdfView.topAnchor.constraint(equalTo: view.centerYAnchor.self).isActive = true
+        
+//        pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+//        
         if let data = documentData {
           pdfView.document = PDFDocument(data: data)
           pdfView.autoScales = true
