@@ -7,14 +7,6 @@
 
 import Foundation
 
-//
-//  NasaDataManager.swift
-//  NasaAPI
-//
-//  Created by Manuel Carvalho on 30/1/21.
-//
-
-import Foundation
 
 protocol  WeatherDataManagerDelegate {
     func didUpdateWeather(picURLs : [String])
@@ -47,7 +39,7 @@ struct WeatherDataManager {
                 
                 if let safeData = data {
                     print("safe data \(safeData.base64EncodedData())")
-                    //self.parseJSON(nasaData: safeData)
+                    self.parseJSON(weatherData: safeData)
                 }
             }
             
@@ -59,35 +51,36 @@ struct WeatherDataManager {
     
   
     
-    func parseJSON(nasaData: Data){
+    func parseJSON(weatherData: Data){
         
         var urls = [String]()
         
         do {
-            if let json = try JSONSerialization.jsonObject(with:nasaData, options: []) as? [String: Any] {
+            if let json = try JSONSerialization.jsonObject(with:weatherData, options: []) as? [String: Any] {
                
                 print("Parsing JSON")
-                if let photos = json["photos"] as? [Any] {
-                   //print(photos)
-                    for photo in photos{
-                        if let dictionary = photo as? [String: Any] {
-                                    
-                            //print(dictionary["img_src"])
-                            if let imgURL = dictionary["img_src"] as? String {
-                                
-                               // let aString = "This is my string"
-                                let imgURLs = imgURL.replacingOccurrences(of: "http", with: "https", options: .literal, range: nil)
-                                
-                                urls.append(imgURLs)
-                            }
-                            
-                                    
-                                }
-                    }
-                    
-                    //print(urls)
-                    self.delegate?.didUpdateNasa(picURLs : urls)
-                }
+                print(json)
+//                if let photos = json["photos"] as? [Any] {
+//                   //print(photos)
+//                    for photo in photos{
+//                        if let dictionary = photo as? [String: Any] {
+//
+//                            //print(dictionary["img_src"])
+//                            if let imgURL = dictionary["img_src"] as? String {
+//
+//                               // let aString = "This is my string"
+//                                let imgURLs = imgURL.replacingOccurrences(of: "http", with: "https", options: .literal, range: nil)
+//
+//                                urls.append(imgURLs)
+//                            }
+//
+//
+//                                }
+//                    }
+//
+//                    //print(urls)
+//                    self.delegate?.didUpdateNasa(picURLs : urls)
+//                }
             }
         } catch let error as NSError {
             print("Failed to load: \(error.localizedDescription)")

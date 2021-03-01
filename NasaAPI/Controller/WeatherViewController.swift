@@ -8,11 +8,13 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
+    
+    var dataManager = WeatherDataManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        dataManager.fetchNasaData(sol: 1000)
     }
     
 
