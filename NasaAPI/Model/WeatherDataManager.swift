@@ -33,12 +33,12 @@ struct WeatherDataManager {
             
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
-                    print(error!)
+                    prInt(error!)
                     return
                 }
                 
                 if let safeData = data {
-                    print("safe data \(safeData.base64EncodedData())")
+                    prInt("safe data \(safeData.base64EncodedData())")
                     self.parseJSON(weatherData: safeData)
                 }
             }
@@ -58,14 +58,14 @@ struct WeatherDataManager {
         do {
             if let json = try JSONSerialization.jsonObject(with:weatherData, options: []) as? [String: Any] {
                
-                print("Parsing JSON")
-                print(json)
+                prInt("Parsing JSON")
+                prInt(json)
 //                if let photos = json["photos"] as? [Any] {
-//                   //print(photos)
+//                   //prInt(photos)
 //                    for photo in photos{
 //                        if let dictionary = photo as? [String: Any] {
 //
-//                            //print(dictionary["img_src"])
+//                            //prInt(dictionary["img_src"])
 //                            if let imgURL = dictionary["img_src"] as? String {
 //
 //                               // let aString = "This is my string"
@@ -78,12 +78,12 @@ struct WeatherDataManager {
 //                                }
 //                    }
 //
-//                    //print(urls)
+//                    //prInt(urls)
 //                    self.delegate?.didUpdateNasa(picURLs : urls)
 //                }
             }
         } catch let error as NSError {
-            print("Failed to load: \(error.localizedDescription)")
+            prInt("Failed to load: \(error.localizedDescription)")
         }
 
     }

@@ -19,7 +19,7 @@ class PhotoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(images.count)
+        prInt(images.count)
         //getImages()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -45,7 +45,7 @@ class PhotoTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         cell.imageView?.image = images[indexPath.row]
-            print("Image \(indexPath.row)")
+            prInt("Image \(indexPath.row)")
             
         
 
