@@ -23,22 +23,14 @@ struct WD{
 }
 
 struct _804{
-    @JsonProperty("First_UTC")
-    let Date first_UTC;
-    @JsonProperty("Last_UTC")
-    let Date last_UTC;
-    @JsonProperty("Month_ordinal")
-    let Int month_ordinal;
-    @JsonProperty("Northern_season")
-    let String northern_season;
-    @JsonProperty("PRE")
-    let PRE pRE;
-    @JsonProperty("Season")
-    let String season;
-    @JsonProperty("Southern_season")
-    let String southern_season;
-    @JsonProperty("WD")
-    let WD wD;
+    let first_UTC:String
+    let last_UTC:String
+    let month_ordinal:Int
+    let northern_season:String
+    let pRE:PRE
+    let season:String
+    let southern_season:String
+    let wD:WD
 }
 
 struct _802{

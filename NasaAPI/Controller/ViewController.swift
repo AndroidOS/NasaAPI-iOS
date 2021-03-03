@@ -40,8 +40,8 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
         
        
         nasaURLs = picURLs
-        prInt("didUpdateNasa")
-        prInt(picURLs)
+        print("didUpdateNasa")
+        print(picURLs)
         let url = URL(string: picURLs[index])!
         if index < picURLs.count-1 {
             index += 1
@@ -49,7 +49,7 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
             index = 0
         }
         
-        prInt(url)
+        print(url)
         downloadImage(from: url)
         
         
@@ -71,7 +71,7 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
 
     @IBAction func btnDownload(_ sender: Any) {
         let userSol = solText.text
-        prInt(userSol)
+        print(userSol)
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
         solText.resignFirstResponder()
@@ -85,11 +85,11 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
     }
     
     func downloadImage(from url: URL) {
-        prInt("Download Started")
+        print("Download Started")
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
-            prInt(response?.suggestedFilename ?? url.lastPathComponent)
-            prInt("Download Finished")
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
             DispatchQueue.main.async() { [weak self] in
                 self?.imageView.image = UIImage(data: data)
             }
@@ -120,11 +120,11 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
     
     func downloadImage1(from url: URL){
         //var pic: UIImage = UIImage(named: "1024")!
-        prInt("Download Started")
+        print("Download Started")
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
-            prInt(response?.suggestedFilename ?? url.lastPathComponent)
-            prInt("Download Finished")
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
             let pic = UIImage(data: data)!
             self.images.append(pic)
            // self.tableView.reloadData()

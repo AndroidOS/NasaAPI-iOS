@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
     
 
     @IBAction func btnShare(_ sender: UIBarButtonItem) {
-        prInt("share button pressed")
+        print("share button pressed")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

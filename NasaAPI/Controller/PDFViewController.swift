@@ -13,7 +13,7 @@ class PDFViewController: UIViewController {
    
     @IBOutlet weak var pdfViewShell: UIView!
     
-    let var documentData: Data?
+    var documentData: Data?
     
     var image = UIImage(named: "1024")
 
@@ -22,18 +22,13 @@ class PDFViewController: UIViewController {
 
         let pdfView = PDFView()
 
-        pdfView.translatesAutoresizingMaskIntoConstraInts = true
+        pdfView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(pdfView)
 
-        pdfView.leadingAnchor.constraInt(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        pdfView.trailingAnchor.constraInt(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        pdfView.topAnchor.constraInt(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
- 
-        
-        pdfView.topAnchor.constraInt(equalTo: view.centerYAnchor.self).isActive = true
-        
-//        pdfView.bottomAnchor.constraInt(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-//        
+        pdfView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        pdfView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         if let data = documentData {
           pdfView.document = PDFDocument(data: data)
           pdfView.autoScales = true
@@ -51,9 +46,9 @@ class PDFViewController: UIViewController {
         let actualPath = resourceDocPath.appendingPathComponent(pdfNameFromUrl)
         do {
             try pdfData.write(to: actualPath, options: .atomic)
-            prInt("pdf successfully saved!")
+            print("pdf successfully saved!")
         } catch {
-            prInt("Pdf could not be saved")
+            print("Pdf could not be saved")
         }
     }
     
@@ -90,9 +85,9 @@ class PDFViewController: UIViewController {
 
         
         let headIng = "Nasa API Details"
-        headIng.draw(at: CGPoInt(x: 70, y: 0), withAttributes: attribHead)
+        headIng.draw(at: CGPoint(x: 70, y: 0), withAttributes: attribHead)
         let text = "Nasa Rover Picture"
-        text.draw(at: CGPoInt(x: 10, y: 100), withAttributes: attributes)
+        text.draw(at: CGPoint(x: 10, y: 100), withAttributes: attributes)
         
         // Location of the image to be drawn in UIKit coordinates.
             let imagePosition = CGRect(x: 0, y: 300, width: 400, height: 400)
@@ -104,7 +99,7 @@ class PDFViewController: UIViewController {
 
     
     @IBAction func btnSharePdf(_ sender: Any) {
-        prInt("Share PDF pressed")
+        print("Share PDF pressed")
         
         var pdfURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last! as URL
                pdfURL = pdfURL.appendingPathComponent( "NasaApi - myPdf.pdf") as URL
@@ -118,7 +113,7 @@ class PDFViewController: UIViewController {
                 activitycontroller.completionWithItemsHandler = {(type, isCompleted, items, error) in
                     if isCompleted
                     {
-                        prInt("completed")
+                        print("completed")
                     }
                 }
             }
