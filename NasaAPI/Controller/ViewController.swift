@@ -85,11 +85,11 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
     }
     
     func downloadImage(from url: URL) {
-        print("Download Started")
+        //print("Download Started")
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
             print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
+            //print("Download Finished")
             DispatchQueue.main.async() { [weak self] in
                 self?.imageView.image = UIImage(data: data)
             }
@@ -120,11 +120,11 @@ class ViewController: UIViewController, NasaDataManagerDelegate {
     
     func downloadImage1(from url: URL){
         //var pic: UIImage = UIImage(named: "1024")!
-        print("Download Started")
+        //print("Download Started")
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
             print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
+            //print("Download Finished")
             let pic = UIImage(data: data)!
             self.images.append(pic)
            // self.tableView.reloadData()

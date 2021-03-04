@@ -38,7 +38,7 @@ struct WeatherDataManager {
                 }
                 
                 if let safeData = data {
-                    print("safe data \(safeData.base64EncodedData())")
+                    print("weather safe data \(safeData.base64EncodedData())")
                     self.parseJSON(weatherData: safeData)
                 }
             }
@@ -58,29 +58,15 @@ struct WeatherDataManager {
         do {
             if let json = try JSONSerialization.jsonObject(with:weatherData, options: []) as? [String: Any] {
                
-                print("Parsing JSON")
+                
                 print(json)
-//                if let photos = json["photos"] as? [Any] {
-//                   //print(photos)
-//                    for photo in photos{
-//                        if let dictionary = photo as? [String: Any] {
-//
-//                            //print(dictionary["img_src"])
-//                            if let imgURL = dictionary["img_src"] as? String {
-//
-//                               // let aString = "This is my string"
-//                                let imgURLs = imgURL.replacingOccurrences(of: "http", with: "https", options: .literal, range: nil)
-//
-//                                urls.append(imgURLs)
-//                            }
-//
-//
-//                                }
-//                    }
-//
-//                    //print(urls)
-//                    self.delegate?.didUpdateNasa(picURLs : urls)
-//                }
+                if let details = json["806"] as? [String:Any] {
+                    
+                    print("Parsing JSON 806")
+                   print(details["First_UTC"])
+                    
+                    self.delegate?.didUpdateNasa(picURLs : urls)
+                }
             }
         } catch let error as NSError {
             print("Failed to load: \(error.localizedDescription)")
