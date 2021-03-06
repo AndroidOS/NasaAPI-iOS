@@ -15,14 +15,28 @@
                     <view key="view" contentMode="scaleToFill" id="DnD-2U-t2l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6a4-oN-gTx">
+                                <rect key="frame" x="20" y="215" width="374" height="336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6a5-XX-50N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6a5-XX-50N" firstAttribute="bottom" secondItem="6a4-oN-gTx" secondAttribute="bottom" constant="311" id="GCL-9h-K9f"/>
+                            <constraint firstItem="6a5-XX-50N" firstAttribute="trailing" secondItem="6a4-oN-gTx" secondAttribute="trailing" constant="20" id="arM-P5-Mkh"/>
+                            <constraint firstItem="6a4-oN-gTx" firstAttribute="leading" secondItem="6a5-XX-50N" secondAttribute="leading" constant="20" id="dKT-pT-bc4"/>
+                            <constraint firstItem="6a4-oN-gTx" firstAttribute="top" secondItem="6a5-XX-50N" secondAttribute="top" constant="127" id="hkE-BX-AsX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iqT-Ie-DhP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGE-Li-iMD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821" y="-556"/>
+            <point key="canvasLocation" x="820.28985507246387" y="-556.47321428571422"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -61,8 +75,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A88-lz-oEB">
-                                <rect key="frame" x="170" y="598" width="74" height="30"/>
-                                <state key="normal" title="New Rover"/>
+                                <rect key="frame" x="159" y="598" width="96" height="30"/>
+                                <state key="normal" title="Mars Weather"/>
                                 <connections>
                                     <segue destination="C7q-Tt-Tcv" kind="show" id="sVu-uE-QcF"/>
                                 </connections>
