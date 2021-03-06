@@ -9,13 +9,13 @@ import Foundation
 
 
 protocol  WeatherDataManagerDelegate {
-    func didUpdateWeather(picURLs : [String])
+    func didUpdateWeather(weatherData : String  )
 }
 
 struct WeatherDataManager {
     
     
-    var delegate: NasaDataManagerDelegate?
+    var delegate: WeatherDataManagerDelegate?
     
     func fetchNasaData(sol: Int){
         
@@ -53,7 +53,6 @@ struct WeatherDataManager {
     
     func parseJSON(weatherData: Data){
         
-        var urls = [String]()
         
         do {
             if let json = try JSONSerialization.jsonObject(with:weatherData, options: []) as? [String: Any] {
@@ -63,9 +62,9 @@ struct WeatherDataManager {
                 if let details = json["806"] as? [String:Any] {
                     
                     print("Parsing JSON 806")
-                   print(details["First_UTC"])
+                   let wDate = details["First_UTC"]
                     
-                    self.delegate?.didUpdateNasa(picURLs : urls)
+                    self.delegate?.didUpdateWeather(weatherData: wDate as! String  )
                 }
             }
         } catch let error as NSError {
