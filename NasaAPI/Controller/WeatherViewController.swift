@@ -11,18 +11,23 @@ class WeatherViewController: UIViewController, WeatherDataManagerDelegate {
     
     
     
+    @IBOutlet weak var lblDescription: UILabel!
     
     var dataManager = WeatherDataManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dataManager.delegate = self
         dataManager.fetchNasaData(sol: 1000)
     }
     
 
     func didUpdateWeather(weatherData: String) {
-        print("didUpdateWeather")
+        print("didUpdateWeather \(weatherData)")
+        DispatchQueue.main.async {
+            self.lblDescription.text = weatherData
+        }
+        
     }
 
 }

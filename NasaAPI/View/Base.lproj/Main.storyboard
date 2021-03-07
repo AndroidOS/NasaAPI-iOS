@@ -33,6 +33,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iqT-Ie-DhP"/>
+                    <connections>
+                        <outlet property="lblDescription" destination="6a4-oN-gTx" id="whf-jy-Qdx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGE-Li-iMD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

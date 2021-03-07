@@ -38,7 +38,7 @@ struct WeatherDataManager {
                 }
                 
                 if let safeData = data {
-                    print("weather safe data \(safeData.base64EncodedData())")
+                    //print("weather safe data \(safeData.base64EncodedData())")
                     self.parseJSON(weatherData: safeData)
                 }
             }
@@ -61,7 +61,7 @@ struct WeatherDataManager {
                 print(json)
                 if let details = json["806"] as? [String:Any] {
                     
-                    print("Parsing JSON 806")
+                    print("Parsing JSON 806 \(details)")
                    let wDate = details["First_UTC"]
                     
                     self.delegate?.didUpdateWeather(weatherData: wDate as! String  )
