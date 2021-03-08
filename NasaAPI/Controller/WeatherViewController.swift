@@ -24,9 +24,14 @@ class WeatherViewController: UIViewController, WeatherDataManagerDelegate {
 
     func didUpdateWeather(weatherData: String) {
         print("didUpdateWeather \(weatherData)")
+        
+        let mydate = weatherData[weatherData.index(weatherData.startIndex, offsetBy: 3) ..< weatherData.index(weatherData.endIndex, offsetBy: -1)]
+        
         DispatchQueue.main.async {
-            self.lblDescription.text = weatherData
+            self.lblDescription.text = String(mydate) as String
         }
+        
+       
         
     }
 
