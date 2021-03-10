@@ -23,7 +23,7 @@ class WeatherViewController: UIViewController, WeatherDataManagerDelegate {
     
 
     func didUpdateWeather(weatherData: String) {
-        print("didUpdateWeather \(weatherData)")
+        //print("didUpdateWeather \(weatherData)")
         
         let mydate = weatherData[weatherData.index(weatherData.startIndex, offsetBy: 3) ..< weatherData.index(weatherData.endIndex, offsetBy: -1)]
         

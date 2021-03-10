@@ -58,14 +58,19 @@ struct WeatherDataManager {
             if let json = try JSONSerialization.jsonObject(with:weatherData, options: []) as? [String: Any] {
                
                 
-                print(json)
-                if let details = json["806"] as? [String:Any] {
-                    
-                    print("Parsing JSON 806 \(details)")
-                   let wDate = details["First_UTC"]
-                    
-                    self.delegate?.didUpdateWeather(weatherData: wDate as! String  )
+               // print(json)
+//                if let details = json["806"] as? [String:Any] {
+//
+//                    //print("Parsing JSON 806 \(details)")
+//                   let wDate = details["First_UTC"]
+//
+//                    self.delegate?.didUpdateWeather(weatherData: wDate as! String  )
+//                }
+                
+                if let dayList = json["sol_keys"] as? [Any] {
+                    print("dayList \(dayList)")
                 }
+                
             }
         } catch let error as NSError {
             print("Failed to load: \(error.localizedDescription)")
