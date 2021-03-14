@@ -8,41 +8,33 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Weather View Controller-->
-        <scene sceneID="b3t-kp-3tq">
+        <!--Weather Table View Controller-->
+        <scene sceneID="oqU-v0-zNr">
             <objects>
-                <viewController id="C7q-Tt-Tcv" customClass="WeatherViewController" customModule="NasaAPI" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DnD-2U-t2l">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <tableViewController id="Dth-0n-5GE" customClass="WeatherTableViewController" customModule="NasaAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="X1f-M1-d9t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T07-h8-wWy">
-                                <rect key="frame" x="0.0" y="197" width="414" height="699"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="101" translatesAutoresizingMaskIntoConstraints="NO" id="voR-Zz-Ryq">
-                                <rect key="frame" x="0.0" y="88" width="414" height="101"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="4jD-44-Rgj">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="voR-Zz-Ryq" id="0Yo-bq-gyA">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="101"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4jD-44-Rgj" id="0vU-70-0EU">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6a5-XX-50N"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="T07-h8-wWy" firstAttribute="leading" secondItem="6a5-XX-50N" secondAttribute="leading" id="Qjc-2o-Hk8"/>
-                            <constraint firstItem="T07-h8-wWy" firstAttribute="trailing" secondItem="6a5-XX-50N" secondAttribute="trailing" id="Tbr-iz-g5v"/>
-                            <constraint firstItem="T07-h8-wWy" firstAttribute="top" secondItem="6a5-XX-50N" secondAttribute="top" constant="109" id="ly4-Og-4bk"/>
-                            <constraint firstAttribute="bottom" secondItem="T07-h8-wWy" secondAttribute="bottom" id="pcv-4t-Uyi"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="iqT-Ie-DhP"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AGE-Li-iMD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Dth-0n-5GE" id="I8W-Ez-UUi"/>
+                            <outlet property="delegate" destination="Dth-0n-5GE" id="yuW-lU-nvB"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6wP-2c-1N3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820.28985507246387" y="-556.47321428571422"/>
+            <point key="canvasLocation" x="1601" y="-532"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -84,7 +76,7 @@
                                 <rect key="frame" x="159" y="598" width="96" height="30"/>
                                 <state key="normal" title="Mars Weather"/>
                                 <connections>
-                                    <segue destination="C7q-Tt-Tcv" kind="show" id="sVu-uE-QcF"/>
+                                    <segue destination="Dth-0n-5GE" kind="presentation" id="Y5g-y8-Y8r"/>
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="DaI-Za-vVL">

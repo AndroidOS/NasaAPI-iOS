@@ -24,7 +24,7 @@
 		BE9F557925D327140017D1BB /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F557825D327140017D1BB /* PhotoTableViewController.swift */; };
 		BE9FDF7A25EEDA7700D8A81D /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9FDF7925EEDA7700D8A81D /* WeatherModel.swift */; };
 		BEA02EE625EC4C32008D262E /* WeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA02EE525EC4C32008D262E /* WeatherDataManager.swift */; };
-		BEA02EEB25EC4DB4008D262E /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA02EEA25EC4DB4008D262E /* WeatherViewController.swift */; };
+		BEA02EEB25EC4DB4008D262E /* WeatherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA02EEA25EC4DB4008D262E /* WeatherTableViewController.swift */; };
 		BEA3991A25E05D6C00C535E0 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3991925E05D6C00C535E0 /* PDFViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +69,7 @@
 		BE9F557825D327140017D1BB /* PhotoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
 		BE9FDF7925EEDA7700D8A81D /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		BEA02EE525EC4C32008D262E /* WeatherDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataManager.swift; sourceTree = "<group>"; };
-		BEA02EEA25EC4DB4008D262E /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		BEA02EEA25EC4DB4008D262E /* WeatherTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewController.swift; sourceTree = "<group>"; };
 		BEA3991925E05D6C00C535E0 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,7 +156,7 @@
 				BE9F557825D327140017D1BB /* PhotoTableViewController.swift */,
 				BE7C94B425DC7046008D527C /* DetailViewController.swift */,
 				BEA3991925E05D6C00C535E0 /* PDFViewController.swift */,
-				BEA02EEA25EC4DB4008D262E /* WeatherViewController.swift */,
+				BEA02EEA25EC4DB4008D262E /* WeatherTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -327,7 +327,7 @@
 				BE8671E825DB12A00076078C /* ImageList.swift in Sources */,
 				BEA3991A25E05D6C00C535E0 /* PDFViewController.swift in Sources */,
 				BE9D75C525D4824400CC81CB /* PhotoTableViewCell.swift in Sources */,
-				BEA02EEB25EC4DB4008D262E /* WeatherViewController.swift in Sources */,
+				BEA02EEB25EC4DB4008D262E /* WeatherTableViewController.swift in Sources */,
 				BE9DD53F25C6052800D65D8D /* PhotoModel.swift in Sources */,
 				BE9F557925D327140017D1BB /* PhotoTableViewController.swift in Sources */,
 				BE0C689225C34AE7004CA6F7 /* ViewController.swift in Sources */,
