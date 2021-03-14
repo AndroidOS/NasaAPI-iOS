@@ -72,7 +72,12 @@ struct WeatherDataManager {
                         //print("dayList \(date1)")
                         if let dateDetails = json["\(date1)"] as? [String:Any] {
                             if let details = dateDetails["PRE"] as? [String:Any] {
-                                print(details["mn"] as! Double)
+                                print("\(details.values)")
+                                //print(details["mn"] as! Double)
+                                for detail in details {
+                                    //print("\(details["mn"] )")
+                                    //print(detail)
+                                }
                             }
                         }
                     }

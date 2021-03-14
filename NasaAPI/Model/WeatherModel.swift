@@ -7,6 +7,13 @@
 
 import Foundation
 
+struct dayReport{
+    let av:Double
+    let mx:Double
+    let mn:Double
+    let ct:Int
+}
+
 /* ObjectMapper om = new ObjectMapper(); struct Camera: Decodable 
 Root root = om.readValue(myJsonString), Root.class); */
 struct PRE{
