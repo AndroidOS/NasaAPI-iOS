@@ -9,7 +9,7 @@ import Foundation
 
 
 protocol  WeatherDataManagerDelegate {
-    func didUpdateWeather(weatherData : String  )
+    func didUpdateWeather(weatherData : [String:Any] )
 }
 
 struct WeatherDataManager {
@@ -74,9 +74,11 @@ struct WeatherDataManager {
                             if let details = dateDetails["PRE"] as? [String:Any] {
                                 print("\(details)")
                                 //print(details["mn"] as! Double)
+                                self.delegate?.didUpdateWeather(weatherData: details )
                                 for detail in details {
                                     //print("\(details["mn"] )")
                                     //print(detail)
+//                                    self.delegate?.didUpdateWeather(weatherData: detail as! Dictionary<String, Any> )
                                 }
                             }
                         }

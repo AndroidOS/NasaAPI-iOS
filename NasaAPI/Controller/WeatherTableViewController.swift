@@ -42,8 +42,8 @@ class WeatherTableViewController: UITableViewController, WeatherDataManagerDeleg
     }
     
 
-    func didUpdateWeather(weatherData: String) {
-        //print("didUpdateWeather \(weatherData)")
+    func didUpdateWeather(weatherData: [String:Any]) {
+        print("didUpdateWeather \(weatherData)")
         
         
         
