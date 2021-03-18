@@ -9,16 +9,16 @@ import Foundation
 
 
 protocol  WeatherDataManagerDelegate {
-    func didUpdateWeather(weatherData : [String:Any] )
+    func didUpdateWeather(weatherData : [DayReport] )
 }
 
-struct WeatherDataManager {
+class WeatherDataManager {
     
     
     var delegate: WeatherDataManagerDelegate?
     var nasaDayList = [DayReport]()
     
-    mutating func fetchNasaData(sol: Int){
+    func fetchNasaData(sol: Int){
         
         let nasaApiURL = "https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0"
        
@@ -26,7 +26,7 @@ struct WeatherDataManager {
     }
     
     
-    mutating func performRequest(urlString: String){
+    func performRequest(urlString: String){
         
         if let url = URL(string: urlString){
             
@@ -52,7 +52,7 @@ struct WeatherDataManager {
     
   
     
-    mutating func parseJSON(weatherData: Data){
+    func parseJSON(weatherData: Data){
         
         
         do {
@@ -78,18 +78,14 @@ struct WeatherDataManager {
                                 let a = DayReport(av: details["av"] as! Double, mx: details["mx"] as! Double, mn: details["mn"] as! Double, ct: details["ct"] as! Int)
                                 
                                 self.nasaDayList.append(a)
-                                self.delegate?.didUpdateWeather(weatherData: details )
-                                for detail in details {
-                                    //print("\(details["mn"] )")
-                                    //print(detail)
-//                                    self.delegate?.didUpdateWeather(weatherData: detail as! Dictionary<String, Any> )
-                                }
+                                //self.delegate?.didUpdateWeather(weatherData: details )
+                                
                             }
                         }
                     }
                     
                 }
-                
+                self.delegate?.didUpdateWeather(weatherData: nasaDayList    )
             }
         } catch let error as NSError {
             print("Failed to load: \(error.localizedDescription)")
