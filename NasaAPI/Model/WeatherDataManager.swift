@@ -16,8 +16,9 @@ struct WeatherDataManager {
     
     
     var delegate: WeatherDataManagerDelegate?
+    var nasaDayList = [DayReport]()
     
-    func fetchNasaData(sol: Int){
+    mutating func fetchNasaData(sol: Int){
         
         let nasaApiURL = "https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0"
        
@@ -25,7 +26,7 @@ struct WeatherDataManager {
     }
     
     
-    func performRequest(urlString: String){
+    mutating func performRequest(urlString: String){
         
         if let url = URL(string: urlString){
             
@@ -51,7 +52,7 @@ struct WeatherDataManager {
     
   
     
-    func parseJSON(weatherData: Data){
+    mutating func parseJSON(weatherData: Data){
         
         
         do {
@@ -74,6 +75,9 @@ struct WeatherDataManager {
                             if let details = dateDetails["PRE"] as? [String:Any] {
                                 print("\(details)")
                                 //print(details["mn"] as! Double)
+                                let a = DayReport(av: details["av"] as! Double, mx: details["mx"] as! Double, mn: details["mn"] as! Double, ct: details["ct"] as! Int)
+                                
+                                self.nasaDayList.append(a)
                                 self.delegate?.didUpdateWeather(weatherData: details )
                                 for detail in details {
                                     //print("\(details["mn"] )")

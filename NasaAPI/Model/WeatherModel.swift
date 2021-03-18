@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct dayReport{
+struct DayReport{
     let av:Double
     let mx:Double
     let mn:Double
