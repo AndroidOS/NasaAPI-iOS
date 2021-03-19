@@ -11,7 +11,9 @@ class WeatherTableViewController: UITableViewController, WeatherDataManagerDeleg
     
     
     
-    let myList = [1,2,3,4,5]
+    //let myList = [1,2,3,4,5]
+    
+    var myList = [DayReport]()
     
     var dataManager = WeatherDataManager()
 
@@ -36,7 +38,7 @@ class WeatherTableViewController: UITableViewController, WeatherDataManagerDeleg
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         
-        cell.textLabel?.text = "\(myList[indexPath.row])"
+        cell.textLabel?.text = "\(myList[indexPath.row].av)"
 
         return cell
     }
@@ -48,6 +50,9 @@ class WeatherTableViewController: UITableViewController, WeatherDataManagerDeleg
         
         
         DispatchQueue.main.async {
+            self.myList = weatherData
+            self.tableView.reloadData()
+            
             
         }
         
