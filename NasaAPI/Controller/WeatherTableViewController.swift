@@ -38,7 +38,7 @@ class WeatherTableViewController: UITableViewController, WeatherDataManagerDeleg
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         
-        cell.textLabel?.text = "\(myList[indexPath.row].av)"
+        cell.textLabel?.text = "AV = \(myList[indexPath.row].av) - CT =  \(myList[indexPath.row].ct)"
 
         return cell
     }
